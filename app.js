@@ -1,12 +1,12 @@
-import { buildProgramFromSources, loadShadersFromURLS, setupWebGL } from "../Tank_CGI/libs/utils.js";
-import { ortho, lookAt, flatten, translate, rotateY, vec3, mult, rotateZ, transpose, inverse, normalMatrix, vec4, add, scale, normalize } from "../Tank_CGI/libs/MV.js";
-import {modelView, loadMatrix, multMatrix, multRotationY, multScale, multTranslation, pushMatrix, popMatrix, multRotationX, multRotationZ} from "../Tank_CGI/libs/stack.js";
+import { buildProgramFromSources, loadShadersFromURLS, setupWebGL } from "../TankCGI/libs/utils.js";
+import { ortho, lookAt, flatten, translate, rotateY, vec3, mult, rotateZ, transpose, inverse, normalMatrix, vec4, add, scale, normalize } from "../TankCGI/libs/MV.js";
+import {modelView, loadMatrix, multMatrix, multRotationY, multScale, multTranslation, pushMatrix, popMatrix, multRotationX, multRotationZ} from "../TankCGI/libs/stack.js";
 
-import * as CUBE from '../Tank_CGI/libs/cube.js';
-import * as TORUS from '../Tank_CGI/libs/torus.js';
-import * as PRISM from '../Tank_CGI/libs/prism.js';
-import * as CYLINDER from '../Tank_CGI/libs/cylinder.js';
-import * as SPHERE from '../Tank_CGI/libs/sphere.js';
+import * as CUBE from '../TankCGI/libs/cube.js';
+import * as TORUS from '../TankCGI/libs/torus.js';
+import * as PRISM from '../TankCGI/libs/prism.js';
+import * as CYLINDER from '../TankCGI/libs/cylinder.js';
+import * as SPHERE from '../TankCGI/libs/sphere.js';
 
 /** @type WebGLRenderingContext */
 let gl;
