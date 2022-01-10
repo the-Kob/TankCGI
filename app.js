@@ -1,12 +1,12 @@
-import { buildProgramFromSources, loadShadersFromURLS, setupWebGL } from "../TankCGI/libs/utils.js";
-import { ortho, lookAt, flatten, translate, rotateY, vec3, mult, rotateZ, transpose, inverse, normalMatrix, vec4, add, scale, normalize } from "../TankCGI/libs/MV.js";
-import {modelView, loadMatrix, multMatrix, multRotationY, multScale, multTranslation, pushMatrix, popMatrix, multRotationX, multRotationZ} from "../TankCGI/libs/stack.js";
+import { buildProgramFromSources, loadShadersFromURLS, setupWebGL } from "../../libs/utils.js";
+import { ortho, lookAt, flatten, vec3, mult, inverse, normalMatrix, add, scale, normalize } from "../../libs/MV.js";
+import {modelView, loadMatrix, multRotationY, multScale, multTranslation, pushMatrix, popMatrix, multRotationX, multRotationZ} from "../../libs/stack.js";
 
-import * as CUBE from '../TankCGI/libs/cube.js';
-import * as TORUS from '../TankCGI/libs/torus.js';
-import * as PRISM from '../TankCGI/libs/prism.js';
-import * as CYLINDER from '../TankCGI/libs/cylinder.js';
-import * as SPHERE from '../TankCGI/libs/sphere.js';
+import * as CUBE from '../../libs/cube.js';
+import * as TORUS from '../../libs/torus.js';
+import * as PRISM from '../../libs/prism.js';
+import * as CYLINDER from '../../libs/cylinder.js';
+import * as SPHERE from '../../libs/sphere.js';
 
 /** @type WebGLRenderingContext */
 let gl;
@@ -133,6 +133,9 @@ function setup(shaders)
     let canvas = document.getElementById("gl-canvas");
     let aspect = canvas.width / canvas.height;
 
+    let popup = document.getElementById("popup");
+    let closePopup = document.getElementsByClassName("close");
+
     gl = setupWebGL(canvas);
 
     let program = buildProgramFromSources(gl, shaders["shader.vert"], shaders["shader.frag"]);
@@ -162,7 +165,23 @@ function setup(shaders)
         if(findKey(event.key) == -1) {
             keysPressed.push(event.key);
         }
+
+        // Handles the closing and opening of the controls menu
+        if(event.key == "c") {
+            if(popup.style.display === "block") {
+                // Hide popup
+                popup.style.display = "none";
+            } else {
+                // Show popup
+                popup.style.display = "block";
+            }
+
+        }
     }
+
+    closePopup[0].onclick = function() {
+        popup.style.display = "none";
+    };
 
     // Sets key values that are being pressed to false
     document.onkeyup = function(event) {
