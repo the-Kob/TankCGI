@@ -5,5 +5,64 @@ body {
     /*display: flex;*/
     margin: 0px;
     overflow: hidden; /*  Disable scrollbars */
+    display: block;
     background-color: black;
+}
+
+.popup {
+    text-align: center;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -75%);
+    width: 450px;
+    height: 350px;
+    color: rgb(255, 255, 255);
+    opacity: 85%;
+}
+
+.close {
+    color: rgb(255, 255, 255);
+    float: right;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup_content {
+    font-family: Helvetica, sans-serif;
+    background-color: rgb(23, 23, 23);
+    padding: 20px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50px;
+}
+
+h1 {
+    font-size: 1.5em;
+    color: rgb(245, 222, 179);
+}
+
+.controls {
+    text-align: left;
+    padding-left: 55px;
+}
+
+h2 {
+    font-size: 1em;
+    color: rgb(226, 215, 189);
+}
+
+.description {
+    font-size: 0.9em;
+    color: rgb(206, 206, 206);
+}
+
+.author {
+    color: rgb(245, 222, 179);
 }
